@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.views">
+      <e4view
+            category="net.wickedshell.scrmonitor.e3.category"
+            class="net.wickedshell.scrmonitor.internal.ui.part.SCRMonitorPart"
+            icon="icon/scrmonitor.gif"
+            id="net.wickedshell.scrmonitor.e3"
+            name="SCR Monitor"
+            restorable="false">
+      </e4view>
+      <category
+            id="net.wickedshell.scrmonitor.e3.category"
+            name="SCR Monitor">
+      </category>
+   </extension>
+
+</fragment>

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Wickedshell Registry Monitor
+Bundle-SymbolicName: net.wickedshell.scrmonitor;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Vendor: Stefan Reichert
+Require-Bundle: org.eclipse.e4.core.di,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.e4.core.services,
+ org.eclipse.e4.ui.di,
+ org.eclipse.equinox.ds,
+ org.eclipse.swt,
+ org.eclipse.jface
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.annotation;version="1.1.0",
+ javax.inject;version="1.0.0",
+ org.osgi.framework,
+ org.osgi.service.event
+Bundle-Activator: net.wickedshell.scrmonitor.internal.ui.Activator
+Bundle-ActivationPolicy: lazy

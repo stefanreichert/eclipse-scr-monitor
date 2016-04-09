@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCR Monitor E3 support
+Bundle-SymbolicName: net.wickedshell.scrmonitor.e3;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Vendor: Stefan Reichert
+Fragment-Host: net.wickedshell.scrmonitor;bundle-version="0.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui
