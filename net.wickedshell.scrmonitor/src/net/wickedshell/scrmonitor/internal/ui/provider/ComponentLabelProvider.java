@@ -1,5 +1,6 @@
 package net.wickedshell.scrmonitor.internal.ui.provider;
 
+import java.util.Arrays;
 import java.util.StringJoiner;
 
 import org.apache.felix.scr.Component;
@@ -99,6 +100,20 @@ public class ComponentLabelProvider extends LabelProvider implements ITableLabel
 		default:
 			return "";
 		}
+	}
+
+	public boolean isLabelMatch(Component component, String filter) {
+		boolean bundleMatch = component.getBundle().getSymbolicName().toLowerCase().contains(filter);
+		boolean nameMatch = component.getName().toLowerCase().contains(filter);
+		boolean serviceMatch = Arrays.toString(component.getServices()).toLowerCase().contains(filter);
+		boolean statusMatch = getStateLabel(component.getState()).contains(filter);
+		return bundleMatch || nameMatch || serviceMatch || statusMatch;
+	}
+
+	public boolean isLabelMatch(Reference reference, String filter) {
+		boolean nameMatch = reference.getName().toLowerCase().contains(filter);
+		boolean serviceMatch = reference.getServiceName().toLowerCase().contains(filter);
+		return nameMatch || serviceMatch;
 	}
 
 }

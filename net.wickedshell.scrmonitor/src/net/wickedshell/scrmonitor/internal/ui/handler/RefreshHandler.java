@@ -9,7 +9,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
 
-import net.wickedshell.scrmonitor.internal.ui.part.SCRMonitorPart;
+import net.wickedshell.scrmonitor.internal.ui.event.Topic;
 
 public class RefreshHandler {
 
@@ -22,6 +22,6 @@ public class RefreshHandler {
 
 	@Execute
 	public void execute() {
-		eventAdmin.postEvent(new Event(SCRMonitorPart.SCR_MONITOR_REFRESH, new HashMap<>()));
+		eventAdmin.postEvent(new Event(Topic.BUNDLES_CHANGED, new HashMap<>()));
 	}
 }

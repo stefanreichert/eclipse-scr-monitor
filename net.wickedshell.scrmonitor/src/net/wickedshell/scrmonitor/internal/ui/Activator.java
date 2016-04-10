@@ -9,7 +9,7 @@ import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
 import org.osgi.service.event.EventConstants;
 
-import net.wickedshell.scrmonitor.internal.ui.part.SCRMonitorPart;
+import net.wickedshell.scrmonitor.internal.ui.event.Topic;
 import net.wickedshell.scrmonitor.internal.ui.provider.node.SCRRoot;
 
 public class Activator implements BundleActivator {
@@ -19,9 +19,9 @@ public class Activator implements BundleActivator {
 		EventAdmin eventAdmin = context.getService(context.getServiceReference(EventAdmin.class));
 		context.addBundleListener((event) -> {
 			HashMap<String, Object> properties = new HashMap<>();
-			properties.put(EventConstants.EVENT_TOPIC, SCRMonitorPart.SCR_MONITOR_REFRESH);
+			properties.put(EventConstants.EVENT_TOPIC, Topic.BUNDLES_CHANGED);
 			properties.put(IEventBroker.DATA, new SCRRoot());
-			eventAdmin.postEvent(new Event(SCRMonitorPart.SCR_MONITOR_REFRESH, properties));
+			eventAdmin.postEvent(new Event(Topic.BUNDLES_CHANGED, properties));
 		});
 	}
 
